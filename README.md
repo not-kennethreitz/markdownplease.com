@@ -8,7 +8,7 @@ Powered by [Readability](http://readability.com/), [Requests](http://python-guid
 ## Usage
 
 
-    $ curl http://url2markdown.herokuapp.com/url=http://kennethreitz.
+    $ curl http://url2markdown.herokuapp.com/url=http://kennethreitz.org
 
     My name is Kenneth Reitz.
 
