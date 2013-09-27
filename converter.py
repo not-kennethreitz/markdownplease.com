@@ -15,14 +15,19 @@ def readability(url):
     params = {'url': url, 'token': token}
 
     r = requests.get(READABILITY_URL, params=params)
-    return r.json()['content']
+    return r.json()['content'], r.json()['title']
 
-def convert(html):
+def convert(html, title=None):
+    if title:
+        title = '# {}'.format(title)
+        html = '\n\n'.join([title, html])
+
     return html2text(html)
 
 def meh(url):
     try:
-        return convert(readability(url))
+        content, title = readability(url)
+        return convert(content, title=title)
     except KeyError:
         return None
 
