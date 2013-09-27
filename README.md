@@ -8,14 +8,11 @@ Powered by [Readability](http://readability.com/), [Requests](http://python-guid
 ## Usage
 
 
-    $ curl http://url2markdown.herokuapp.com/url=http://kennethreitz.org
-
+    $ curl http://url2markdown.herokuapp.com/?url=http://kennethreitz.org
+    
+    # Hi, there.
+    
     My name is Kenneth Reitz.
-
-    I am a wandering street photographer, musician, and moral fallibilist.
-
-    I'm the product owner of Python at Heroku and a member of the Python Software
-    Foundation. I believe that simplicity is always better than functionality.
     ...
 
 Enjoy!
