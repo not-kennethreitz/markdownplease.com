@@ -27,3 +27,7 @@ This application requires a [Readability Parser Token](http://www.readability.co
     $ export READABILITY_TOKEN=xxxxxx
 
 You can use [autoenv](https://github.com/kennethreitz/autoenv) to do this easily.
+
+## License
+
+Unfortunately, this code is released under [GPLv3](http://www.gnu.org/copyleft/gpl.html).

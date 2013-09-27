@@ -6,7 +6,7 @@ from converter import meh
 app = Flask(__name__)
 
 @app.route('/')
-def fuck_gpl2():
+def fuck_gpl3():
     url = request.args.get('url')
 
     if url:
