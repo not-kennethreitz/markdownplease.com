@@ -3,7 +3,7 @@
 This is a very simple web service that will take a given URL, and return
 a Markdown representation of that page.
 
-Powered by [Readability](http://readability.com/), [Requests](http://python-guide.org/), [html2text](http://www.aaronsw.com/2002/html2text/) and [Flask](http://flask.pocoo.org/).
+Powered by [Readability](http://readability.com/), [Requests](http://python-guide.org/), [html2text](http://www.aaronsw.com/2002/html2text/), and [Flask](http://flask.pocoo.org/).
 
 ## Usage
 
