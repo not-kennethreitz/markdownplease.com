@@ -19,8 +19,8 @@ def readability(url):
 
 def convert(html, title=None):
     if title:
-        title = '# {}'.format(title)
-        html = '\n\n'.join([title, html])
+        title = u'# {}'.format(title)
+        html = u'\n\n'.join([title, html])
 
     return html2text(html)
 
