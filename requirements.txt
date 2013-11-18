@@ -8,3 +8,4 @@ html2text==3.200.3
 itsdangerous==0.23
 requests==2.0.0
 wsgiref==0.1.2
+markdown==2.3.1
