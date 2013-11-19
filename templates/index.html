@@ -2,41 +2,67 @@
 <html>
     <head>
         <title>url2markdown</title>
-        <link href="{{ url_for('static', filename='css/bootstrap.min.css' ) }}" rel="stylesheet" />
+        <link
+            href="{{ url_for('static', filename='css/bootstrap.min.css' ) }}"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <div class="container">
-            <h1>url2markdown</h1>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">url2markdown</a>
 
-            <p>This is a very simple web service that will take a given URL, and return
-            a Markdown representation of that page.</p>
+                    <form action="/" method="get" class="navbar-form navbar-left">
+                        <fieldset>
+                            <input
+                                type="text"
+                                name="url"
+                                class="form-control"
+                                style="width: 300px;"
+                                placeholder="http://kennethreitz.com"
+                            />
+                            <input type="hidden" name="type" value="html" />
+                            <button type="submit" class="btn btn-default">
+                                Go
+                            </button>
+                        </fieldset>
+                    </form>
 
-            <form action="/" method="get" class="form-inline">
-                <fieldset>
-                    <label>URL:</label>
-                    <input type="text" name="url" class="form-control" style="width: 200px;" placeholder="http://kennethreitz.com" />
-                    <input type="hidden" name="type" value="html" />
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </fieldset>
-            </form>
 
-            {% if page_url %}
-                <a href="/?url={{ page_url }}">Get the Markdown</a>
-
-                <div>
-                    {{ converted_url_contents }}
+                    {% if page_url %}
+                        <a
+                            href="/?url={{ page_url }}"
+                            class="btn btn-default navbar-btn navbar-right"
+                        >
+                            Get the Markdown
+                        </a>
+                    {% endif %}
                 </div>
-            {% endif %}
+            </nav>
 
-            <a href="https://github.com/kennethreitz/url2markdown">
-                <img
-                    style="position: absolute; top: 0; right: 0; border: 0;"
-                    src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
-                    alt="Fork me on GitHub"
-                />
-            </a>
+            <div style="padding-top:40px;">
+                {% if page_url %}
+                    <div>
+                        {{ converted_url_contents }}
+                    </div>
+                {% endif %}
 
-            <p>A <a href="http://kennethreitz.org/projects/">Kenneth Reitz</a> project.</p>
+                <a href="https://github.com/kennethreitz/url2markdown">
+                    <img
+                        style="position: absolute; top: 0; right: 0; border: 0; z-index: 10000;"
+                        src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
+                        alt="Fork me on GitHub"
+                    />
+                </a>
+            </div>
+
         </div>
+        <footer class="navbar navbar-fixed-bottom panel-footer">
+            <p class="container">
+                A <a href="http://kennethreitz.org/projects/">Kenneth Reitz</a>/
+                <a href="http://lumbercoder.com/">Gil Goncalves</a> project.
+            </p>
+        </footer>
     </body>
 </html>
