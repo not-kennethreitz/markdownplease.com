@@ -18,14 +18,12 @@ def fuck_gpl3():
     type = request.args.get('type', 'markdown')
 
     content = get_readable_content_from_url(url)
-    print url
 
     if url:
         if not content:
             return '404 Not Found', 404
 
         if type == 'html':
-            print url
             markdown_url_contents = _markdown_to_html(content)
             return render_template(
                 'index.html',
