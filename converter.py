@@ -7,24 +7,29 @@ from html2text import html2text
 
 _READABILITY_URL = 'https://www.readability.com/api/content/v1/parser'
 
-def readability(url):
+def _readability(url):
     token = os.environ.get('READABILITY_TOKEN')
     params = {'url': url, 'token': token}
 
     r = requests.get(_READABILITY_URL, params=params)
-    return r.json()['content'], r.json()['title']
+    decoded_content = (
+        r.json()['content'],
+        r.json()['title'],
+    )
+    return decoded_content
 
-def convert(html, title=None):
+def _convert(html, title=None):
     if title:
         title = '# {}'.format(title)
         html = '\n\n'.join([title, html])
 
-    return html2text(html)
+    text_from_html = html2text(html)
+    return text_from_html
 
 def get_readable_content_from_url(url):
     try:
-        content, title = readability(url)
-        return convert(content, title=title)
+        content, title = _readability(url)
+        return _convert(content, title=title)
     except KeyError:
         return None
 
