@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>url2markdown</title>
+        <title>Markdown Please!</title>
         <link
             href="{{ url_for('static', filename='css/bootstrap.min.css' ) }}"
             rel="stylesheet"
         />
     </head>
     <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <ul class="nav">
+                <a class="navbar-brand" href="/">url2markdown</a>
+
+                <form action="/" method="get" class="navbar-form navbar-left">
+                    <fieldset>
+                        <input
+                            type="text"
+                            name="url"
+                            class="form-control"
+                            style="width: 300px;"
+                            placeholder="http://kennethreitz.com"
+                        />
+                        <input type="hidden" name="type" value="html" />
+                        <button type="submit" class="btn btn-default">
+                            Go
+                        </button>
+                    </fieldset>
+                </form>
+
+
+                {% if page_url %}
+                    <a
+                        href="/?url={{ page_url }}"
+                        class="btn btn-default navbar-btn navbar-right"
+                    >
+                        Get the Markdown
+                    </a>
+                {% endif %}
+                </ul>
+            </div>
+        </nav>
+
         <div class="container">
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">url2markdown</a>
-
-                    <form action="/" method="get" class="navbar-form navbar-left">
-                        <fieldset>
-                            <input
-                                type="text"
-                                name="url"
-                                class="form-control"
-                                style="width: 300px;"
-                                placeholder="http://kennethreitz.com"
-                            />
-                            <input type="hidden" name="type" value="html" />
-                            <button type="submit" class="btn btn-default">
-                                Go
-                            </button>
-                        </fieldset>
-                    </form>
-
-
-                    {% if page_url %}
-                        <a
-                            href="/?url={{ page_url }}"
-                            class="btn btn-default navbar-btn navbar-right"
-                        >
-                            Get the Markdown
-                        </a>
-                    {% endif %}
-                </div>
-            </nav>
-
             <div style="padding-top:40px;">
                 {% if page_url %}
                     <div>
