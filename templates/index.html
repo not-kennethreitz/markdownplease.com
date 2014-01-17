@@ -21,6 +21,9 @@
                             class="form-control"
                             style="width: 300px;"
                             placeholder="http://en.wikipedia.org/wiki/Markdown"
+                            {% if page_url %}
+                                value="{{ page_url }}"
+                            {% endif %}
                         />
                         <input type="hidden" name="type" value="html" />
                         <button type="submit" class="btn btn-default">
@@ -28,7 +31,6 @@
                         </button>
                     </fieldset>
                 </form>
-
 
                 {% if page_url %}
                     <a
