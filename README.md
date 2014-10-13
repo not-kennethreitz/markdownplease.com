@@ -12,7 +12,7 @@ and [Flask](http://flask.pocoo.org/).
 ## Usage
 
 
-    $ curl http://url2markdown.herokuapp.com/?url=http://kennethreitz.org
+    $ curl http://mdpls.co/?url=http://kennethreitz.org
 
     # Hi, there.
 
