@@ -17,3 +17,7 @@ def fuck_gpl3():
             return '404 Not Found', 404
     else:
         return render_template('index.html')
+
+
+if __name__ == '__main__':
+    app.run()
